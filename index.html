@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Firebase</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron" id="heading">
+        Employee Database
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Months Worked</th>
+                <th scope="col">Monthly Rate</th>
+                <th scope="col">Total Billed</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="col-md-12">
+          <form autocomplete="off">
+            <div class="form-group">
+              <label for="name"><strong>Employee name</strong></label>
+              <input type="text" class="form-control" id="name" />
+            </div>
+            <div class="form-group">
+              <label for="role"><strong>Role</strong></label>
+              <input type="text" class="form-control" id="role" />
+            </div>
+            <div class="form-group">
+              <label for="date"><strong>Start date (DD/MM/YYYY)</strong></label>
+              <input type="date" class="form-control" id="date" />
+            </div>
+            <div class="form-group">
+              <label for="rate"><strong>Monthly Rate</strong></label>
+              <input type="text" class="form-control" id="rate" />
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="assets/javascript/app.js"></script>
+</html>
