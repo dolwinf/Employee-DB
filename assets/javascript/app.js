@@ -43,6 +43,14 @@ database.ref().on("child_added", function(snap) {
   var rrole = data.role;
   var rrate = data.rate;
   var rdate = data.date;
+
+  var dateFormat = "YYYY-MM-DD";
+  var momentDate = moment(rdate, dateFormat);
+  var today = moment();
+
+  var diff = today.diff(momentDate, "months");
+  var bill = diff * rrate;
+
   var results =
     "<tr><td>" +
     rname +
@@ -50,9 +58,13 @@ database.ref().on("child_added", function(snap) {
     rrole +
     "</td><td>" +
     rdate +
-    "</td><td></td><td>" +
+    "</td><td>" +
+    diff +
+    "</td><td>" +
     rrate +
-    "</td><td></td></tr>";
+    "</td><td>" +
+    bill +
+    "</td></tr>";
   tableBody.prepend(results);
   clearValues();
 });
